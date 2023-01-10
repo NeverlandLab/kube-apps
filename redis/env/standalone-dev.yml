@@ -1,0 +1,21 @@
+global:
+  storageClass: "openebs-hostpath"
+  redis:
+    password: "etherfurnace"
+
+architecture: standalone
+auth:
+  enabled: true
+
+master:
+  count: 1
+  
+  persistence:
+    enabled: true
+    size: 5Gi
+    
+  service:
+    type: NodePort
+    
+    nodePorts:
+      redis: "6379"
