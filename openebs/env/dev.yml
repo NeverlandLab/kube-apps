@@ -1,0 +1,13 @@
+varDirectoryPath:
+  baseDir: "/data/k8s/openebs"
+
+localprovisioner:
+  enabled: true
+  basePath: "/data/k8s/openebs/local"
+  deviceClass:
+    fsType: "xfs"
+
+localpv-provisioner:
+  enabled: true
+  openebsNDM:
+    enabled: false

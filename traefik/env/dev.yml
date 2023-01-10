@@ -1,0 +1,13 @@
+ports:
+  web:
+    port: 8000
+    expose: true
+    exposedPort: 80
+    protocol: TCP
+    nodePort: 80
+  websecure:
+    port: 8443
+    expose: true
+    exposedPort: 443
+    protocol: TCP
+    nodePort: 443
