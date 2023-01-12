@@ -1,0 +1,29 @@
+roles:
+  master: "true"
+  ingest: "false"
+  data: "true"
+
+replicas: 1
+minimumMasterNodes: 1
+
+esMajorVersion: "6"
+image: "elasticsearch"
+imageTag: "6.8.12"
+
+esJavaOpts: "-Xmx1g -Xms1g"
+
+volumeClaimTemplate:
+  storageClassName: "openebs-hostpath"
+  resources:
+    requests:
+      storage: 10Gi
+
+persistence:
+  enabled: true
+
+antiAffinity: "soft"
+
+
+service:
+  type: NodePort
+  nodePort: "9200"
