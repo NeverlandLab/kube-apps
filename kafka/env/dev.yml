@@ -1,0 +1,25 @@
+global:
+  storageClass: "openebs-hostpath"
+
+service:
+  type: NodePort
+  nodePorts:
+    client: "9092"  
+
+persistence:
+  enabled: true
+  size: 5Gi
+
+logPersistence:
+  enabled: true
+  size: 5Gi
+
+volumePermissions:
+  enabled: true
+
+zookeeper:
+  enabled: true
+  replicaCount: 1
+  persistence:
+    enabled: true
+    size: 5Gi  
