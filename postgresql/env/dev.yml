@@ -1,0 +1,7 @@
+global:
+  storageClass: "openebs-hostpath"
+
+primary:
+  service:
+    nodePorts:
+      postgresql: "5432"  

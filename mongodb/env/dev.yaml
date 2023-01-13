@@ -1,0 +1,13 @@
+architecture: standalone
+useStatefulSet: true
+auth:
+  enabled: false
+service:
+  type: NodePort
+  port: 27017
+  nodePort: "27017"
+ 
+persistence:
+  enabled: true
+  storageClass: "openebs-hostpath"
+  size: 8Gi

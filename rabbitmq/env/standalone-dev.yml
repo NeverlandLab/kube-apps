@@ -1,0 +1,16 @@
+global:
+  storageClass: "openebs-hostpath"
+
+service:
+  type: NodePort
+  nodePorts:
+    amqp: "5672"
+    manager: "15672"
+
+ingress:
+  enabled: true
+  hostname: rabbitmq.megalab.cc
+
+auth:
+  username: admin
+  password: "etherfurnace"

@@ -1,0 +1,19 @@
+global:
+  storageClass: "openebs-hostpath"
+
+architecture: standalone
+
+auth:
+  rootPassword: "etherfurnace"
+  
+primary:
+  persistence:
+    enabled: true
+    accessModes:
+      - ReadWriteOnce
+    size: 10Gi
+   
+  service:
+    type: NodePort
+    nodePorts:
+      mysql: "3306"

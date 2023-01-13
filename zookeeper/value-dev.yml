@@ -1,0 +1,6 @@
+persistence:
+  enabled: true
+  storageClass: "openebs-hostpath"
+  size: 2Gi
+  dataLogDir:
+    size: 2Gi

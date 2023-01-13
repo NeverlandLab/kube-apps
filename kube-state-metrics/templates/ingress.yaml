@@ -1,0 +1,16 @@
+{{- if .Values.ingress.url}}
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: {{ .Release.Name }}
+  namespace: {{ .Release.Namespace }}
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`{{.Values.ingress.url}}`)
+      kind: Rule
+      services:
+        - name: kube-state-metrics
+          port: 8080
+{{- end -}}          

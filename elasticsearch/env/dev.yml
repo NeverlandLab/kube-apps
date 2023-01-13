@@ -3,8 +3,8 @@ roles:
   ingest: "false"
   data: "true"
 
-replicas: 1
-minimumMasterNodes: 1
+replicas: 3
+minimumMasterNodes: 2
 
 esMajorVersion: "6"
 image: "elasticsearch"

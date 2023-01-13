@@ -1,0 +1,42 @@
+global:
+  imagePullSecrets: []
+  storageClass: "longhorn"
+  redis:
+    password: "etherfurnace"
+
+architecture: replication
+
+auth:
+  enabled: true
+  sentinel: true
+
+master:
+  count: 1
+  
+  persistence:
+    enabled: true
+    size: 5Gi 
+replica:
+  replicaCount: 2
+  
+  persistence:
+    enabled: true
+    
+    accessModes:
+      - ReadWriteOnce
+    
+    size: 5Gi
+    
+ 
+sentinel:
+  enabled: true
+  masterSet: etherfurnace
+  quorum: 2
+
+  persistence:
+    enabled: true
+    size: 100Mi
+   
+volumePermissions:
+  enabled: true
+  
